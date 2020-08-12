@@ -9,13 +9,16 @@ df['avg_vote'] = df['avg_vote'].astype(str)
 df['year'] = df['year'].astype(str)
 df['description'] = df['description'].astype(str)
 
-for i in ["director","writer", "actors"]:
+for i in ["director","writer", "actors", "production_company"]:
     df[i] = df[i].str.replace(' ', '')
 
-features = ['director', 'actors', 'year', 'genre', 'keywords']
+for i in ["director","writer", "actors", "production_company"]:
+    df[i] = df[i].str.replace(',', ' ')
+
+features = ['title', 'director', 'year', 'genre', 'keywords', 'production_company', 'writer', 'actors']
 
 def combine_features(row):
-    return ((row['director'] +" ") * 2)+" "+row['actors']+" "+row['year']+" "+row['genre'] +" "+row['keywords']
+    return row['title']+" "+((row['director'] +" ") * 2)+" "+row['year']+" "+((row['genre'] +" ") * 2)+" "+row['keywords']+" "+row['production_company']+" "+row['writer']+" "+row['actors']
 
 for feature in features:
     df[feature] = df[feature].fillna('') #filling all NaNs with blank string
@@ -30,9 +33,9 @@ cosine_sim = cosine_similarity(count_matrix)
 df = df.reset_index()
 
 def get_title_from_index(index):
-    return df[df.index == index]["title"].values[0]
-def get_index_from_title(title):
-    return df[df.title == title]["index"].values[0]
+    return df[df.index == index]["title_year"].values[0]
+def get_index_from_title(title_year):
+    return df[df.title_year == title_year]["index"].values[0]
 
 movie_user_likes = input("Enter Movie Title: ") 
 
