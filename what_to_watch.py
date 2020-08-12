@@ -9,10 +9,13 @@ df['avg_vote'] = df['avg_vote'].astype(str)
 df['year'] = df['year'].astype(str)
 df['description'] = df['description'].astype(str)
 
-features = ['title','director', 'year', 'genre', 'keywords', 'production_company']
+for i in ["director","writer", "actors"]:
+    df[i] = df[i].str.replace(' ', '')
+
+features = ['director', 'actors', 'year', 'genre', 'keywords']
 
 def combine_features(row):
-    return row['title']+" "+row['director']+" "+row['year']+" "+row['genre']+" "+row['keywords']+" "+row['production_company']
+    return ((row['director'] +" ") * 2)+" "+row['actors']+" "+row['year']+" "+row['genre'] +" "+row['keywords']
 
 for feature in features:
     df[feature] = df[feature].fillna('') #filling all NaNs with blank string
