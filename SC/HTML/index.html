@@ -27,10 +27,11 @@
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">What To Watch</a>
                         </li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">ABOUT</a>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Content">Content Based</a>
                         </li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">CONTACT</a>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Collabrative">Collabrative Filtering</a>
                         </li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a>
                     </ul>
                 </div>
                 
@@ -285,11 +286,11 @@
                 </div>
             </div>
         </div>
-        <section class="page-section bg-primary text-white mb-0" id="about">
+        <section class="page-section bg-primary text-white mb-0" id="Content">
             <div class="container">
                 <!-- About Section Heading-->
                 <div class="text-center">
-                    <h2 class="page-section-heading d-inline-block text-white">ABOUT</h2>
+                    <h2 class="page-section-heading d-inline-block text-white">Content Based Filtering</h2>
                 </div>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
@@ -300,10 +301,33 @@
                 <!-- About Section Content-->
                 <div class="row">
                     <div class="col-lg-4 ml-auto">
-                        <p class="pre-wrap lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization.</p>
+                        <p class="pre-wrap lead">Content Based Filtering works by comparing different features from movies such as movies, actors, genre, directors, keywords, production company, and writers then those words are turned into numbers which is Count vectorization. Then by looking at those numbers the algroithim runs a cosine calculation inorder to find the smallest angles, which would become the most similar points.</p>
                     </div>
                     <div class="col-lg-4 mr-auto">
-                        <p class="pre-wrap lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p>
+                    <img class="img-fluid" src="assets/img/portfolio/soft-cosine.png" alt="Log Cabin"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="page-section bg-secondary text-white mb-0" id="Collabrative">
+            <div class="container">
+                <!-- About Section Heading-->
+                <div class="text-center">
+                    <h2 class="page-section-heading d-inline-block text-white">Collabrative Filtering</h2>
+                </div>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- About Section Content-->
+                <div class="row">
+                    <div class="col-lg-4 ml-auto">
+                        <p class="pre-wrap lead">The collabrative filtering model looks for similar users based on their ratings for certain movies. The top-N recommendation algorithm uses a similarity-based vector model to identify the k most similar users to an active user. After the k most similar users are found, their corresponding user-item matrices are aggregated to identify the set of items to be recommended. The algorithm baiscally finds a similarity between two users based on ratings that they gave on the specific movies.</p>
+                    </div>
+                    <div class="col-lg-4 mr-auto">
+                    <img class="img-fluid" src="assets/img/portfolio/recommender-systems-advances-in-collaborative-filtering-10-638.jpg" alt="Log Cabin"/>
                     </div>
                 </div>
             </div>
@@ -325,14 +349,20 @@
                     <div class="col-lg-4">
                         <div class="d-flex flex-column align-items-center">
                             <div class="icon-contact mb-3"><i class="fas fa-mobile-alt"></i></div>
-                            <div class="text-muted">Phone</div>
-                            <div class="lead font-weight-bold">(555) 555-5555</div>
+                            <div class="text-muted">Names</div>
+                            <div class="lead font-weight-bold">Inna Gurevitch</div>
+                            <div class="lead font-weight-bold">Michael Seidenberg</div>
+                            <div class="lead font-weight-bold">Terence Kezer</div>
+                            <div class="lead font-weight-bold">Sugeet Chahal</div>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="d-flex flex-column align-items-center">
                             <div class="icon-contact mb-3"><i class="far fa-envelope"></i></div>
-                            <div class="text-muted">Email</div><a class="lead font-weight-bold" href="mailto:name@example.com">name@example.com</a>
+                            <div class="text-muted">Emails</div><a class="lead font-weight-bold" href="mailto:innag33@gmail.com">innag33@gmail.com</a>
+                            <a class="lead font-weight-bold" href="mailto:mseidenberg13@gmail.com">mseidenberg13@gmail.com</a>
+                            <a class="lead font-weight-bold" href="mailto:tmkezer@gmail.com">tmkezer@gmail.com</a>
+                            <a class="lead font-weight-bold" href="mailto:sugeetchahal@gmail.com">sugeetchahal@gmail.com</a>
                         </div>
                     </div>
                 </div>
@@ -344,8 +374,7 @@
                     <!-- Footer Location-->
                     <div class="col-lg-4 mb-5 mb-lg-0">
                         <h4 class="mb-4">LOCATION</h4>
-                        <p class="pre-wrap lead mb-0">2215 John Daniel Drive
-Clark, MO 65243</p>
+                        <p class="pre-wrap lead mb-0">UC Berkeley Extension</p>
                     </div>
                     <!-- Footer Social Icons-->
                     <div class="col-lg-4 mb-5 mb-lg-0">
@@ -353,8 +382,8 @@ Clark, MO 65243</p>
                     </div>
                     <!-- Footer About Text-->
                     <div class="col-lg-4">
-                        <h4 class="mb-4">ABOUT FREELANCER</h4>
-                        <p class="pre-wrap lead mb-0">Freelance is a free to use, MIT licensed Bootstrap theme created by Start Bootstrap</p>
+                        <h4 class="mb-4">About What to Watch</h4>
+                        <p class="pre-wrap lead mb-0">What to watch was developed by fellow movie lovers for movie lovers. The service provides content based filtering as well as collabrative filtering.</p>
                     </div>
                 </div>
             </div>
@@ -368,10 +397,10 @@ Clark, MO 65243</p>
         <!-- D3 -->
         <script src="https://d3js.org/d3.v5.min.js"></script>
         <!-- Bootstrap core JS-->
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
         <!-- Third party plugin JS-->
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <!-- Contact form JS-->
         <script src="assets/mail/jqBootstrapValidation.js"></script>
         <script src="assets/mail/contact_me.js"></script>
