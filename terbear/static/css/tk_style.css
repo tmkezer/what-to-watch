@@ -1,0 +1,6 @@
+.img-fluid {
+    float: left;
+    width:  350px;
+    height: 400px;
+    background-size: cover;
+}
