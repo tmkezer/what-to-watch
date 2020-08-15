@@ -216,7 +216,7 @@ def main():
         print("at step# ", steps)
 
         if user not in user_ids:
-            return(flask.render_template('negative.html',name=user))
+            return(flask.render_template('negativeusers.html',name=user))
         else:
             score, recc_list = get_recommendation_(user, 1)
             print(f"Found reccomendations for user {user-us_start}: {recc_list}")
@@ -227,7 +227,7 @@ def main():
                 loops+=1
                 if loops>1000000:
                     print("Nothing found this time..")
-                    return (flask.render_template('negative.html',name=user))
+                    return (flask.render_template('negativeusers.html',name=user))
         
             movies_list = []
             genres = []
