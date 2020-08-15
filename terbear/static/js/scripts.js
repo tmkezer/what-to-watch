@@ -68,7 +68,7 @@
   })(jQuery); // End of use strict
   
   // Autocomplete function
-  d3.csv("static/js/tk_movies.csv").then(function(movieData) {
+  d3.csv("static/js/final_movies.csv").then(function(movieData) {
     var movies = movieData.map(data => data.title_year);
     console.log("titles", movies);
 

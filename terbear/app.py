@@ -6,7 +6,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 app = flask.Flask(__name__, template_folder='templates')
 
-df2 = pd.read_csv('./model/tk_movies.csv')
+df2 = pd.read_csv('./model/final_movies.csv')
 
 count = CountVectorizer(stop_words='english')
 count_matrix = count.fit_transform(df2['combined_features'])
@@ -28,8 +28,8 @@ def get_recommendations(title):
     dat = df2['year'].iloc[movie_indices]
     img = df2['img_url'].iloc[movie_indices]
     des = df2['description'].iloc[movie_indices]
-    dir = df2['director'].iloc[movie_indices]
-    act = df2['actors'].iloc[movie_indices]
+    dir = df2['director_spaces'].iloc[movie_indices]
+    act = df2['actors_spaces'].iloc[movie_indices]
     vote = df2['avg_vote'].iloc[movie_indices]
     return_df = pd.DataFrame(columns=['Title','Year', 'img_url', 'description', 'director', 'actors', 'avg_vote'])
     return_df['Title'] = tit
