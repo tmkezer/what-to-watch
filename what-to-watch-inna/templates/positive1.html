@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>User Based Recommender</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="static/css/style.css">
+</head>
+
+<body>
+<style>
+  body {
+  margin-top: 0px; 
+  padding-top: 0px;  
+  background: rgb(158, 157, 157);
+  /* background: url('https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/mars_odyssey_2.jpg') */
+  }
+
+  .container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: rgb(249, 252, 215);
+  }
+  p {
+    color:rgb(3, 9, 34);
+    font-size: 16px;
+  }
+  #newd {
+    background: rgb(250, 239, 136);
+    color: rgb(7, 1, 32);
+    font-size: 22px;
+    border-color: rgb(4, 1, 19);
+    border-width: 2px;
+    border-radius: 20px;
+    box-shadow: 7px 7px 5px rgb(44, 36, 36);
+  }
+  #missions {
+    font-size: 50px;
+  }
+  #hemis {
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 400px;
+  width: 300px;
+  }
+  #display-1 {
+    color: rgb(7, 1, 32);
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 1px;
+  }
+  #display-2 {
+    color: rgb(69, 37, 197);
+    font-size: 16px;
+    font-style: italic;
+  }
+  #outmovie {
+    margin-left: 50px;
+  }
+  h2 {
+    font-size: 24px;
+    color: rgb(107, 7, 12);
+  }
+  h3 {
+    font-size: 20px;
+    color: rgb(252, 248, 249);
+ 
+  }
+  #movie{
+  height: 30vh;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  margin-right: 5vh;
+  margin-left: 5vh;
+  display: block;
+  border-radius: 2px;
+  padding: 1em;
+  width: auto;
+  box-shadow: 0px 0px 10px -4px grey;
+  text-align: center;
+}
+.movie{
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  margin-right: 5vh;
+  margin-left: 5vh;
+  display: block;
+  border-radius: 2px;
+  padding: 1em;
+  width: auto;
+  text-align: center;
+}
+
+</style> 
+  <div class="container">
+
+    <div class="row">
+
+      <header id="movie" style="background-image: url(https://s3-us-west-2.amazonaws.com/flx-editorial-wordpress/wp-content/uploads/2018/03/13153742/RT_300EssentialMovies_700X250.jpg)" class="masthead bg-primary text-white text-center">
+        
+      </header>
+    <div class="col-md-12">
+      <h2><u>Recommendations</u></h2>
+        <p>If you're unhappy with the choice, go back to homepage and hit submit again for a different result</p>
+    </div>
+</div>
+
+<hr class="my-4"> 
+
+<div class="movie">
+    <p>Showing results for: {{ search_user }}</p>
+    <p>Found results with a users matching score of: {{ score }}</p>
+        <div class="row" id="outmovie" position="text-center">
+          {% for i in range(found) %}
+          <div class="col-md-5">
+            <img id="hemis" src="{{ urls[i] }}" alt="Sloth"/>
+            <p id="display-1">{{ list[i] }}</p>
+            <p id="display-2">{{ genres[i] }}</p>
+            <br>
+          </div>
+          {% endfor %}
+        </div>
+    
+    <br>
+    <a class="button" onClick="goBack()"><i class="fas fa-home"></i> Go Back to Home Page &amp; Try Again.</a>
+</div>
+
+</body>
+
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+
+</html>
