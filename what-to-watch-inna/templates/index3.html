@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>User Based Recommender</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="static/css/style.css">
+</head>
+
+<body>
+<style>
+  body {
+  margin-top: 0px; 
+  padding-top: 0px;  
+  background: rgb(158, 157, 157);
+  /* background: url('https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/mars_odyssey_2.jpg') */
+  }
+  .jumbotron {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 2px;
+  background: dodgerblue;
+  color: rgb(20, 20, 20);
+  }
+  .container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: rgb(243, 243, 217);
+  }
+  p {
+    color:rgb(3, 9, 34);
+    font-size: 16px;
+  }
+.movie{
+  height: 70vh;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  margin-right: 5vh;
+  margin-left: 5vh;
+  display: block;
+  border-radius: 20px;
+  padding: 1em;
+  width: auto;
+  box-shadow: 0px 0px 10px -4px grey;
+  text-align: center;
+}
+#user_id{
+  width: 70%;
+  padding: 1em;
+  color: black;
+  font-size: 18px;
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid grey;
+  }
+#submission_button{
+    width: 25%;
+    padding: 1em;
+    margin: 1em;
+    border-radius: 5px;
+    color: white;
+    background-color:rgb(46, 182, 159);
+    border-style: none;
+}
+  #display-1 {
+    color: rgb(7, 1, 32);
+    font-size: 16px;
+    font-weight: bold;
+  }
+  h2 {
+    font-size: 24px;
+    color: rgb(25, 8, 99);
+  }
+  h3 {
+    font-size: 20px;
+    color: rgb(32, 54, 87);
+  }
+</style> 
+  <div class="container">
+    <div class="row">
+      <div class="jumbotron text-center">
+        <h1 id="missions">Based on Ratins</h1>
+        <!-- <p><a class="btn btn-primary btn-lg" href="/scrape" role="button" id="newd">New Data</a></p> -->
+      </div>
+      <div class="col-md-7">
+        <h2><u>Movie Recommendation System</u></h2>
+
+    </div>
+</div>
+<!-- <h2>Mars Hemispheres Images</h2> -->
+<hr class="my-4"> 
+<!-- <div class="row">
+</div> -->
+<h3>Enter your user id to get movies reccomendation list</h3>
+<header style="background-image: url(https://s3-us-west-2.amazonaws.com/flx-editorial-wordpress/wp-content/uploads/2018/03/13153742/RT_300EssentialMovies_700X250.jpg)" class="masthead bg-primary text-white text-center">
+<div class="movie">
+  <!-- <h3>Enter your user id to get movies reccomendation list</h3> -->
+  <form action="{{ url_for('main') }}" method="POST">
+      <input type="text" id="user_id" name="user_id" placeholder="{{ message }}" required />
+      <input type="submit" id="submission_button" value="Submit"/>
+  </form>
+  <!-- <p style="color: #f8f5f5; padding: 1em;">The model uses <b>User Based Recommendations</b> to find similar movies. Intuitive idea behind is <i>"If a person likes a particular item, he / she will also like an item that is most similar to him / her user liked."</i> The movies list is shown <a href="/read_movies" target="_blank">here</a>.</p> -->
+  <!-- <p>Read more on recommendation systems on <a href="https://developers.google.com/machine-learning/recommendation" target="_blank">Google Developers Machine Learning Blogs</a>.</p> -->
+</div>
+</header>
+<p style="color: #5f5959; padding: 1em;">The model uses <b>User Based Recommendations</b> to find similar movies. Intuitive idea behind is <i>"If a person likes a particular item, he / she will also like an item that is most similar to him / her user liked."</i> The movies list is shown <a href="/read_movies" target="_blank">here</a>.</p>
+<br>
+<p>Read more on recommendation systems on <a href="https://developers.google.com/machine-learning/recommendation" target="_blank">Google Developers Machine Learning Blogs</a>.</p>
+
+
+</div>
+</body>
+
+</html>
