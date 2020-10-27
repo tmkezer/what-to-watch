@@ -2,7 +2,7 @@
 
 In this project, we created a content-based movie recommendation system.
 
-![Test Image 1](https://github.com/tmkezer/what-to-watch/blob/master/readme_images/movie-website-header.JPG)
+![Test Image 1](https://github.com/tmkezer/what-to-watch/blob/master/readme_images/website-example.gif)
 
 The content-based system worked by comparing the movie the user entered with a number of features of the movie, such as director, actors, genre, etc. and then showing the movies that have the most similarities among the compared features. Fine tuning the system took some practice but we ultimately decided on giving double weight to 'Director' and 'Genre'.
 
